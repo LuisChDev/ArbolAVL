@@ -74,6 +74,7 @@ askCommand = do
   case parseInput input of
     [] -> do
       putStrLn "Entrada inválida."
+      putStrLn "escriba 'comandos' para obtener una lista de comandos disponibles."
       askCommand
     lista -> return $ fst $ last lista
 
@@ -92,7 +93,7 @@ Comandos disponibles:
 
 app :: IORef (ArbolAVL Int Persona) -> IO ()
 app arbol = do
-  putStrLn "escriba 'comandos' para obtener una lista de comandos disponibles."
+  putStrLn "\nIngrese su comando.\n"
   usrComm <- askCommand
   case usrComm of
     Comandos -> do
