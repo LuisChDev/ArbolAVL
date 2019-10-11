@@ -12,7 +12,6 @@ import           Tipos
 parseComando :: ReadP String
 parseComando = do
   comando <- many1 $ satisfy $ \char -> char >= 'a' && char <= 'z'
-  -- satisfy (== ' ')
   return comando
 
 -- lee un índice.

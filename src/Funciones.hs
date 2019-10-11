@@ -74,7 +74,7 @@ eliminar ind (NodoAVL indice datos alt izq drch)
                    in balancear (NodoAVL indice datos
                                  (1 + max (altura nuevoDrch) (altura izq))
                                  izq nuevoDrch)
-  | ind < indice = let nuevoIzq = eliminar ind drch
+  | ind < indice = let nuevoIzq = eliminar ind izq
                    in balancear (NodoAVL indice datos
                                  (1 + max (altura drch) (altura nuevoIzq))
                                  nuevoIzq drch)
